@@ -1,0 +1,8 @@
+/.env
+/isbn_list.json
+/isbn_list.tmp
+
+
+/.venv/
+/__pycache__/
+*.py[cod]
