@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "locations": [
+    { "id": "books", "name": "Books", "parent_id": null },
+    { "id": "cossio", "name": "Cossio", "parent_id": "books" },
+    { "id": "rafael-boti", "name": "Rafael Boti", "parent_id": "books" },
+    { "id": "don-juan", "name": "Don Juan", "parent_id": "books" },
+    { "id": "don-juan-despacho", "name": "Despacho", "parent_id": "don-juan" },
+    { "id": "don-juan-cuarto-manu", "name": "Cuarto Manu", "parent_id": "don-juan" },
+    { "id": "don-juan-cuarto-juegos", "name": "Cuarto Juegos", "parent_id": "don-juan" },
+    { "id": "trastero", "name": "Trastero", "parent_id": "books" },
+    { "id": "trastero-caja-1", "name": "Caja 1", "parent_id": "trastero" },
+    { "id": "trastero-caja-2", "name": "Caja 2", "parent_id": "trastero" },
+    { "id": "unknown", "name": "Unknown", "parent_id": "books" }
+  ]
+}
