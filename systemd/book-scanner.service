@@ -5,12 +5,10 @@ After=network-online.target
 
 [Service]
 Type=simple
-User=mhered
-Group=mhered
-WorkingDirectory=/home/mhered/apps/book_scanner
+WorkingDirectory=%h/apps/book_scanner
 Environment=PYTHONUNBUFFERED=1
-EnvironmentFile=/home/mhered/apps/book_scanner/.env
-ExecStart=/home/mhered/apps/book_scanner/.venv/bin/uvicorn main:app --host ${BOOK_SCANNER_BIND_HOST} --port ${BOOK_SCANNER_PORT}
+EnvironmentFile=%h/apps/book_scanner/.env
+ExecStart=%h/apps/book_scanner/.venv/bin/uvicorn main:app --host ${BOOK_SCANNER_BIND_HOST} --port ${BOOK_SCANNER_PORT}
 Restart=on-failure
 RestartSec=5
 UMask=0077
@@ -18,7 +16,7 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=full
 ProtectHome=read-only
-ReadWritePaths=/home/mhered/apps/book_scanner
+ReadWritePaths=%h/apps/book_scanner
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
