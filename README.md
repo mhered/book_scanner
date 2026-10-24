@@ -120,7 +120,7 @@ uv run uvicorn main:app --host "$BOOK_SCANNER_BIND_HOST" --port "$BOOK_SCANNER_P
 Set `BOOK_SCANNER_PUBLIC_URL` to the address the phone will use, for example:
 
 ```text
-http://100.106.249.52:8082
+http://<server-tailnet-ip>:<port>
 ```
 
 Verify that the phone can open `$BOOK_SCANNER_PUBLIC_URL/assign-location` while Tailscale is connected. It will show “No uploaded scan batch is waiting” until the first CSV upload.
@@ -217,7 +217,7 @@ Open **Tailscale** on the iPhone and make sure it is connected. Keep it connecte
 2. Enter the upload URL, e.g.:
 
    ```text
-   http://100.106.249.52:8082/upload
+   http://<server-tailnet-ip>:<port>/upload
    ```
 
    On another deployment, use `BOOK_SCANNER_PUBLIC_URL` followed by `/upload`.
@@ -247,7 +247,7 @@ The action should look like this:
 
 ```text
 Get Contents of URL
-  URL: http://100.106.249.52:8082/upload
+  URL: http://<server-tailnet-ip>:<port>/upload
   Method: POST
   Headers:
     Content-Type: text/csv
@@ -293,7 +293,7 @@ If **Open URLs** reports "Make sure you pass a valid URL":
 3. Run the shortcut with a CSV file and inspect the result. It should be a single URL like:
 
    ```text
-   http://100.106.249.52:8082/assign-location
+   http://<server-tailnet-ip>:<port>/assign-location
    ```
 
 4. If it shows HTML beginning with `<!doctype html>`, remove any second **Get Contents of URL** action. If the POST itself returned HTML, read the error message in that response.
